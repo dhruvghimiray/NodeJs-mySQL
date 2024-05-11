@@ -5,6 +5,6 @@ import {getAllBooks, getSingleBook} from "../controllers/bookController.js"
 
 router.route("/").get(getAllBooks)
 
-router.route("/:id").get(getSingleBook)
+router.route("/:name").get(getSingleBook)
 
 export default router;

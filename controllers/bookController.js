@@ -6,8 +6,9 @@ export const getAllBooks = async (req, res) => {
   res.send(rows);
 };
 
-export async function getSingleBook(id) {
-  const [rows] = await pool.query("SELECT * FROM books where id = ?", [id]);
+export const getSingleBook = async (req, res) => {
+  const name = req.params.name;
+  const [rows] = await pool.query("SELECT * FROM books where name = ?", [name]);
   //   console.log(rows);
-  return rows;
-}
+  res.send(rows);
+};
